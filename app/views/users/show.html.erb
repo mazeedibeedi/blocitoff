@@ -1,2 +1,7 @@
-<h1><%= @user.email %></h1>
-<p>Sign in count <%= @user.sign_in_count %></p>
+<h3>To Do List</h3>
+<div>
+  <%= render @items %>
+  <% if current_user == @user %>
+    <%= render 'items/form', user: @user, item: Item.new %>
+  <% end %>
+</div>
