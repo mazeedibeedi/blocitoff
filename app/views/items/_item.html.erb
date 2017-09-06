@@ -1,6 +1,7 @@
 <div class="media">
   <div class="media-body col-md-8">
     <p><%= item.name %></p>
+    <i><%= distance_of_time_in_words(item.created_at + 7.days, Time.now) %> left</i>
   </div>
   <div class="media-body col-md-4">
     <% if current_user == @user %>
