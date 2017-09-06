@@ -1,7 +1,17 @@
-<h3>To Do List</h3>
-<div>
-  <%= render @items %>
-  <% if current_user == @user %>
-    <%= render 'items/form', user: @user, item: Item.new %>
-  <% end %>
+<div class="row">
+  <div class="col-md-6">
+    <h3>To Do List</h3>
+    <div>
+      <%= render @pending_items %>
+      <% if current_user == @user %>
+        <%= render 'items/form', user: @user, item: Item.new %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h3>Completed Items</h3>
+    <div>
+      <%= render @completed_items %>
+    </div>
+  </div>
 </div>

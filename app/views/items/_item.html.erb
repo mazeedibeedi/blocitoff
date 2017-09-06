@@ -2,4 +2,14 @@
   <div class="media-body col-md-8">
     <p><%= item.name %></p>
   </div>
+  <div class="media-body col-md-4">
+    <% if current_user == @user %>
+      <% if item.completed == false %>
+        <%= link_to '', user_item_path(current_user, item, completed: true), method: :patch, class: 'glyphicon glyphicon-ok' %>
+      <% else %>
+        <%= link_to '', user_item_path(current_user, item, completed: false), method: :patch, class: 'glyphicon glyphicon-repeat' %>
+      <% end %>
+      <%= link_to '', user_item_path(current_user, item), method: :delete, class: 'glyphicon glyphicon-remove' %>
+    <% end %>
+  </div>
 </div>
